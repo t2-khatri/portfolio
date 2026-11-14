@@ -21,12 +21,12 @@ export const site = {
 };
 
 export const hero = {
-  label: "3D and media production, UWE Bristol, class of 2027",
+  label: "3D and media production, UWE Bristol, second year",
   titleStart: "I build 3D worlds and",
   titleItalic: "film",
   titleEnd: "the real one.",
   pitch:
-    "I am a final year digital media student in Bristol. I model and light in Maya, build environments in Unity, and work behind the camera on live action shoots. I am looking to join a small studio that does all of it.",
+    "I am a second year digital media student in Bristol. I model and light in Maya, build environments in Unity, and work behind the camera on live action shoots. I am looking to join a small studio that does all of it.",
   button: "See the 3D work",
   link: "Get in touch",
   featured: {
@@ -223,10 +223,10 @@ export const videos = {
 
 export const about = {
   paragraphs: [
-    "I grew up in Nepal and came to the UK to study. I am now in my final year of a BSc in Digital Media at UWE Bristol, working mostly in 3D, live action production and interactive work.",
+    "I grew up in Nepal and came to the UK to study. I am now in my second year of a BSc in Digital Media at UWE Bristol, working mostly in 3D, live action production and interactive work.",
     "Right now I am animating a short 3D scene, cutting my first showreel, and building a website that shows river levels and rain forecasts across Nepal.",
   ],
-  line: "Looking for a junior 3D or media production role in a small studio from summer 2027.",
+  line: "Looking for a 12 month placement in a small 3D and media studio, starting summer 2027.",
 };
 
 
