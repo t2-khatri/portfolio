@@ -16,7 +16,7 @@ export default function Games() {
       <PixelWalker />
       <div className="wrap section">
         <FadeIn>
-          <p className="meta text-signal mb-4">001/ Games</p>
+          <p className="meta text-signal mb-4">003/ Games</p>
           <h2 className="h-display mb-14">Games I have <em>made</em></h2>
         </FadeIn>
         <div className="grid md:grid-cols-[1.2fr_1fr] gap-12 md:gap-16 items-start">

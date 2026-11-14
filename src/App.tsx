@@ -5,6 +5,7 @@ import FadeIn from "./components/FadeIn";
 import Cover from "./components/Cover";
 import Games from "./components/Games";
 import Videos from "./components/Videos";
+import ThreeD from "./components/ThreeD";
 import { site, hero, focus, projects, about, experience, contact, videos } from "./content";
 
 function Hero() {
@@ -20,7 +21,7 @@ function Hero() {
           </FadeIn>
           <p className="prose-measure mt-7 text-muted">{hero.pitch}</p>
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">
-            <a href="#games" className="btn">{hero.button}</a>
+            <a href="#three-d" className="btn">{hero.button}</a>
             <a href="#contact" className="text-link">{hero.link}</a>
           </div>
         </div>
@@ -31,7 +32,7 @@ function Hero() {
             animate={{ rotate: 2, opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
           >
-            <Cover large title={hero.featured.title} kicker={hero.featured.kicker} meta={hero.featured.meta} colour={hero.featured.colour} />
+            <Cover large title={hero.featured.title} kicker={hero.featured.kicker} meta={hero.featured.meta} colour={hero.featured.colour} image={hero.featured.image} />
           </motion.div>
         </div>
       </div>
@@ -63,7 +64,7 @@ function Work() {
     <section id="work" className="section scroll-mt-24">
       <div className="wrap">
         <FadeIn>
-          <p className="label text-accent mb-4">Websites and tools</p>
+          <p className="meta text-accent mb-4">004/ Websites and tools</p>
           <h2 className="h-display mb-14">Things I have <em>built</em></h2>
         </FadeIn>
         <ul className="border-t rule">
@@ -132,6 +133,7 @@ function About() {
             {about.paragraphs.map((t) => <p key={t}>{t}</p>)}
           </div>
           <p className="label text-muted mt-10">{about.line}</p>
+          <p className="text-[16px] text-muted mt-4">Credited on earlier work as {site.creditedAs}.</p>
         </div>
       </div>
     </section>
@@ -209,7 +211,7 @@ function Footer() {
   return (
     <footer className="border-t rule">
       <div className="wrap py-8 flex flex-col md:flex-row gap-4 justify-between text-[16px]">
-        <p>{site.name}, {site.year}</p>
+        <p>{site.name}, {site.year}. <span className="text-muted">Credited as {site.creditedAs}.</span></p>
         <ul className="flex gap-6">
           <li><a href={site.github} className="text-link" target="_blank" rel="noreferrer">GitHub</a></li>
           {videos.channel && <li><a href={videos.channel} className="text-link" target="_blank" rel="noreferrer">YouTube</a></li>}
@@ -228,8 +230,9 @@ export default function App() {
       <main>
         <Hero />
         <Focus />
-        <Games />
+        <ThreeD />
         <Videos />
+        <Games />
         <Work />
         <About />
         <Experience />

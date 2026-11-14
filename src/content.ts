@@ -8,9 +8,12 @@ export const site = {
   // Tip: name.com can forward hello@tekkhatri.ninja to your Gmail.
   email: "hello@tekkhatri.ninja",
   github: "https://github.com/t2-khatri",
+  // Shown under the name in About and in the footer, so old credits link to this site.
+  creditedAs: "Tek Bahadur Khatri",
   nav: [
+    { label: "3D", href: "#three-d" },
+    { label: "Film", href: "#videos" },
     { label: "Games", href: "#games" },
-    { label: "Videos", href: "#videos" },
     { label: "Work", href: "#work" },
     { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },
@@ -18,36 +21,85 @@ export const site = {
 };
 
 export const hero = {
-  label: "Digital media, UWE Bristol, class of 2027",
-  titleStart: "I make games, websites and",
-  titleItalic: "moving",
-  titleEnd: "pictures.",
+  label: "3D and media production, UWE Bristol, class of 2027",
+  titleStart: "I build 3D worlds and",
+  titleItalic: "film",
+  titleEnd: "the real one.",
   pitch:
-    "I am a final year digital media student in Bristol. I build browser games, web apps and AI video tools, and I like shipping things people can actually use.",
-  button: "See the work",
+    "I am a final year digital media student in Bristol. I model and light in Maya, build environments in Unity, and work behind the camera on live action shoots. I am looking to join a small studio that does all of it.",
+  button: "See the 3D work",
   link: "Get in touch",
   featured: {
-    kicker: "Featured project",
-    title: "Pitch Legends",
-    meta: "Football game for iOS and Android",
+    kicker: "Maya and Arnold",
+    title: "Robot, shopping centre",
+    meta: "Modelled, lit and rendered by me",
     colour: "#1F4E4F",
+    image: "/robot-cover.jpg",
   },
 };
 
 export const focus = [
   {
-    line: "Games that start in a browser tab and end up in an app store.",
-    source: "p5.js, Canvas, Capacitor",
+    line: "Models built by hand, lit properly and placed into the real world.",
+    source: "Maya, Arnold, Unity",
   },
   {
-    line: "Websites with real backends, real logins and real users.",
-    source: "Node, Express, PostgreSQL",
+    line: "Behind the camera on live action shoots, from planning to the final shot.",
+    source: "Camera operator, pre production",
   },
   {
-    line: "AI tools for looking at video, and AI video that tells a story.",
-    source: "Python, FastAPI, Whisper",
+    line: "And when a project needs it, the game, the website or the tool that holds it together.",
+    source: "C#, Three.js, React",
   },
 ];
+
+export type ThreeDPiece = {
+  title: string;
+  tag: string;
+  description: string;
+  role: string;
+  image?: string;
+  colour: string;
+  status?: string;
+};
+
+export const threeD = {
+  lead: {
+    title: "Robot in a shopping centre",
+    tool: "Maya, Arnold",
+    image: "/robot-render.jpg",
+    caption:
+      "A character modelled in Maya, lit with Arnold area lights and an HDRI sky dome, then rendered into a photograph of a real shopping centre.",
+  },
+  pieces: [
+    {
+      title: "Building the robot",
+      tag: "Maya viewport",
+      description:
+        "Built up from primitives into a full character of around 39,000 vertices, with the scene lit to match the photograph behind it.",
+      role: "Modelling, lighting, rendering",
+      image: "/robot-maya.jpg",
+      colour: "#2A2622",
+    },
+    {
+      title: "Unity environment",
+      tag: "Principles of 3D Environments",
+      description:
+        "An explorable 3D environment where the player finds and opens a chest, with books and objects placed around the level and interaction written in C#.",
+      role: "Modelling (my own Maya assets), level layout, C# scripting",
+      colour: "#1E2A44",
+    },
+    {
+      title: "Animated short",
+      tag: "In production",
+      description:
+        "A short animated scene bringing the robot to life: posed, textured and moving, with full lighting and detail.",
+      role: "Modelling, texturing, animation, lighting",
+      colour: "#7A2E2A",
+      status: "Coming December 2026",
+    },
+  ] as ThreeDPiece[],
+};
 
 export type Project = {
   title: string;
@@ -137,23 +189,45 @@ export const games: Game[] = [
 ];
 
 export const videos = {
-  // TODO: paste your channel link, e.g. "https://www.youtube.com/@yourname"
+  // Paste your channel link here when you have one to share, e.g. "https://www.youtube.com/@yourname"
   channel: "",
   intro:
-    "I make short films and AI video: cinematic scenes, prompt experiments and the odd behind the scenes cut. Everything lives on YouTube.",
-  // Paste up to four video IDs (the bit after watch?v= in the link).
-  // Their thumbnails become the four frames of the film strip.
-  ids: [] as string[],
-  caption: "Four frames from my YouTube channel.",
+    "I work as a camera operator on live action shoots, and I care about the planning as much as the shot. These are from my university productions.",
+  // Four frames for the film strip. Each is a YouTube video ID, plus which auto thumbnail to use.
+  frames: [
+    { id: "q2ovHoHDA6g", thumb: "hqdefault" },
+    { id: "q2ovHoHDA6g", thumb: "2" },
+    { id: "3STIhqdVBDk", thumb: "hqdefault" },
+    { id: "q2ovHoHDA6g", thumb: "3" },
+  ],
+  caption: "Frames from Real Magicians and my night shoot.",
+  films: [
+    {
+      title: "Real Magicians",
+      meta: "Live action short. 2 min 16 sec.",
+      role: "Camera operator",
+      href: "https://youtu.be/q2ovHoHDA6g",
+    },
+    {
+      title: "Night shoot",
+      meta: "Live action, milestone 4. 34 sec.",
+      role: "Camera",
+      href: "https://youtu.be/3STIhqdVBDk",
+    },
+  ],
+  preproduction: {
+    label: "See the pre production board",
+    href: "https://www.figma.com/board/pgpQzwPGpeyixvZJDq5pIn/CW2F2---Live-Action-Pre-Production-Template?node-id=177-745&p=f",
+  },
 };
 
 export const about = {
   paragraphs: [
-    "I grew up in Nepal and came to the UK to study. I am now in my final year of a BSc in Digital Media at UWE Bristol, working mostly in creative coding, web development and game design.",
+    "I grew up in Nepal and came to the UK to study. I am now in my final year of a BSc in Digital Media at UWE Bristol, working mostly in 3D, live action production and interactive work.",
     "Alongside my degree I work in Bristol shops and kitchens. It has taught me to work fast, stay calm with a queue out the door and look after a team, which turns out to be useful on group projects too.",
-    "Right now I am building a website that shows river levels and rain forecasts across Nepal, and taking on small freelance jobs in web and AI video.",
+    "Right now I am animating a short 3D scene, cutting my first showreel, and building a website that shows river levels and rain forecasts across Nepal.",
   ],
-  line: "Open to freelance work and graduate roles from summer 2027.",
+  line: "Looking for a junior 3D or media production role in a small studio from summer 2027.",
 };
 
 export const experience = [

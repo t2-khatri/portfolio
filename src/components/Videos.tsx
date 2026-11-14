@@ -5,10 +5,11 @@ import FadeIn from "./FadeIn";
 const PLACEHOLDER = ["#3A3430", "#4A3F38", "#5A4A40", "#3F3A35"];
 
 function Frame({ i }: { i: number }) {
-  const id = videos.ids[i];
+  const f = videos.frames[i];
+  const id = f?.id;
   const inner = id ? (
     <img
-      src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
+      src={`https://img.youtube.com/vi/${id}/${f.thumb}.jpg`}
       alt={`Frame ${i + 1} from a YouTube video`}
       className="w-full h-full object-cover"
       loading="lazy"
@@ -45,8 +46,8 @@ export default function Videos() {
       <div className="bg-[#2A2622] rounded-[24px] section">
         <div className="wrap">
           <FadeIn>
-            <p className="meta text-signal mb-4">002/ Videos</p>
-            <h2 className="h-display">Short films and <em>AI</em> video</h2>
+            <p className="meta text-signal mb-4">002/ Film</p>
+            <h2 className="h-display">Behind the <em>camera</em></h2>
           </FadeIn>
           <p className="prose-measure mt-6 text-muted-d">{videos.intro}</p>
 
@@ -67,6 +68,21 @@ export default function Videos() {
           </div>
           <div className="border-t rule mt-6 pt-4 flex flex-col md:flex-row md:justify-between gap-4">
             <p className="meta text-muted-d">{videos.caption}</p>
+          </div>
+
+          <ul className="mt-12 border-t rule">
+            {videos.films.map((f) => (
+              <li key={f.href} className="border-b rule py-6 md:grid md:grid-cols-[1.4fr_1fr_auto] md:gap-8 md:items-baseline">
+                <span className="font-serif text-[26px] block">{f.title}</span>
+                <span className="block text-muted-d text-[16px] mt-1 md:mt-0">
+                  {f.meta} <span className="meta text-signal block mt-1">{f.role}</span>
+                </span>
+                <a href={f.href} className="text-link inline-block mt-3 md:mt-0" target="_blank" rel="noreferrer">Watch on YouTube</a>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-8 flex flex-wrap gap-8">
+            <a href={videos.preproduction.href} className="text-link" target="_blank" rel="noreferrer">{videos.preproduction.label}</a>
             {videos.channel && (
               <a href={videos.channel} className="text-link" target="_blank" rel="noreferrer">
                 Watch on YouTube
