@@ -18,6 +18,8 @@
   --color-muted: #5C554B;
   --font-serif: "Libre Caslon Text", Georgia, serif;
   --font-sans: "Karla", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-signal: #79C043;
 }
 
 html { scroll-behavior: smooth; }
@@ -89,3 +91,42 @@ body {
 @media (max-width: 767px) { .section { padding-block: 80px; } }
 
 .wrap { max-width: 1080px; margin-inline: auto; padding-inline: 24px; }
+
+/* Meta layer, borrowed from the Northline and Ninefold briefs */
+.meta {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Dark ground sections */
+.dark { background: var(--ink); color: var(--paper); }
+.dark .rule { border-color: rgba(247, 243, 234, 0.16); }
+.dark .text-muted-d { color: #B5AC9E; }
+.dark .text-link { color: var(--paper); text-decoration-color: var(--paper); }
+.dark .text-link:hover { text-decoration-color: #79C043; }
+
+/* Pixel walker: moves in steps so it reads as a sprite, not a tween */
+.walker-track { position: relative; height: 34px; overflow: hidden; }
+.walker {
+  position: absolute; bottom: 1px; left: 0;
+  animation: walker-travel 40s steps(110) infinite;
+}
+.walker-frame { position: absolute; inset: 0; }
+.walker-frame.a { animation: walker-a 0.5s steps(1) infinite; }
+.walker-frame.b { animation: walker-b 0.5s steps(1) infinite; }
+@keyframes walker-travel { from { transform: translateX(-40px); } to { transform: translateX(calc(100vw + 40px)); } }
+@keyframes walker-a { 0% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes walker-b { 0% { opacity: 0; } 50% { opacity: 1; } }
+@media (max-width: 767px) { .walker { animation-duration: 80s; } }
+@media (prefers-reduced-motion: reduce) {
+  .walker { animation: none; transform: translateX(16px); }
+  .walker-frame.a { animation: none; opacity: 1; }
+  .walker-frame.b { animation: none; opacity: 0; }
+}
+
+/* Film strip */
+.strip-scroll { overflow-x: auto; scrollbar-width: thin; }
+.sprockets { display: flex; gap: 14px; padding: 8px 12px; }
+.sprockets span { width: 14px; height: 9px; border-radius: 2px; background: var(--paper); flex: none; }

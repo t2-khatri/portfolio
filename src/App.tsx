@@ -3,7 +3,9 @@ import { motion } from "motion/react";
 import Navbar from "./components/Navbar";
 import FadeIn from "./components/FadeIn";
 import Cover from "./components/Cover";
-import { site, hero, focus, projects, about, experience, contact } from "./content";
+import Games from "./components/Games";
+import Videos from "./components/Videos";
+import { site, hero, focus, projects, about, experience, contact, videos } from "./content";
 
 function Hero() {
   return (
@@ -18,7 +20,7 @@ function Hero() {
           </FadeIn>
           <p className="prose-measure mt-7 text-muted">{hero.pitch}</p>
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">
-            <a href="#work" className="btn">{hero.button}</a>
+            <a href="#games" className="btn">{hero.button}</a>
             <a href="#contact" className="text-link">{hero.link}</a>
           </div>
         </div>
@@ -58,10 +60,10 @@ function Focus() {
 
 function Work() {
   return (
-    <section id="work" className="section pt-0 scroll-mt-24">
+    <section id="work" className="section scroll-mt-24">
       <div className="wrap">
         <FadeIn>
-          <p className="label text-accent mb-4">Selected work</p>
+          <p className="label text-accent mb-4">Websites and tools</p>
           <h2 className="h-display mb-14">Things I have <em>built</em></h2>
         </FadeIn>
         <ul className="border-t rule">
@@ -210,6 +212,7 @@ function Footer() {
         <p>{site.name}, {site.year}</p>
         <ul className="flex gap-6">
           <li><a href={site.github} className="text-link" target="_blank" rel="noreferrer">GitHub</a></li>
+          {videos.channel && <li><a href={videos.channel} className="text-link" target="_blank" rel="noreferrer">YouTube</a></li>}
           <li><a href={`mailto:${site.email}`} className="text-link">Email</a></li>
           <li><a href="#top" className="text-link">Back to top</a></li>
         </ul>
@@ -225,6 +228,8 @@ export default function App() {
       <main>
         <Hero />
         <Focus />
+        <Games />
+        <Videos />
         <Work />
         <About />
         <Experience />

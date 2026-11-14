@@ -9,9 +9,10 @@ export const site = {
   email: "hello@tekkhatri.ninja",
   github: "https://github.com/t2-khatri",
   nav: [
+    { label: "Games", href: "#games" },
+    { label: "Videos", href: "#videos" },
     { label: "Work", href: "#work" },
     { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" },
   ],
 };
@@ -59,31 +60,13 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Pitch Legends",
+    title: "Jim Jim Kim Kim",
     year: "2026",
-    tag: "Mobile game",
+    tag: "3D website",
     description:
-      "A football squad builder and match simulator that runs in the browser and is packaged for the App Store and Google Play with Capacitor, complete with the store compliance paperwork.",
-    colour: "#1F4E4F",
-    links: [],
-  },
-  {
-    title: "Himal Warrior",
-    year: "2026",
-    tag: "HTML5 game",
-    description:
-      "A Nepal themed platform game drawn on canvas, with five levels and touch controls so it plays as well on a phone as on a laptop.",
-    colour: "#6B2F2A",
-    links: [],
-  },
-  {
-    title: "Nebula Runner",
-    year: "2026",
-    tag: "University coursework",
-    description:
-      "A two level arcade game in p5.js for module UFCF8L 30 1, delivered with a written report and a presentation on the design decisions.",
-    colour: "#1E2A44",
-    links: [{ label: "GitHub", href: "https://github.com/t2-khatri/Nebula_Runner_Game" }],
+      "A toy shop site where three 3D toys, a bot, a bunny and a rocket, load into a live Three.js stage and come apart as you scroll. Built with GLB models, D3 charts and a pinned scrolling gallery.",
+    colour: "#7A2E2A",
+    links: [{ label: "GitHub", href: "https://github.com/t2-khatri/jim-jim-kim-kim-toy-site" }],
   },
   {
     title: "Living Garden",
@@ -113,6 +96,56 @@ export const projects: Project[] = [
     links: [],
   },
 ];
+
+export type Game = {
+  title: string;
+  line: string;
+  meta: string;
+  colour: string;
+  image?: string; // put a screenshot in public/ and write its path here, e.g. "/game-3d.jpg"
+  link?: { label: string; href: string };
+};
+
+export const games: Game[] = [
+  {
+    // TODO: swap in the real name, a one line pitch and the repo link of your 3D game
+    title: "3D Game",
+    line: "My 3D game, built in the browser with Three.js. Play it or read the code on GitHub.",
+    meta: "3D, BROWSER. 2026.",
+    colour: "#1E2A44",
+    link: { label: "GitHub", href: "https://github.com/t2-khatri" },
+  },
+  {
+    title: "Pitch Legends",
+    line: "Build a football squad and simulate the season, in a browser or on your phone.",
+    meta: "IOS, ANDROID, BROWSER. 2026.",
+    colour: "#1F4E4F",
+  },
+  {
+    title: "Himal Warrior",
+    line: "Five levels of Himalayan platforming, drawn on canvas, with touch controls.",
+    meta: "BROWSER, MOBILE. 2026.",
+    colour: "#6B2F2A",
+  },
+  {
+    title: "Nebula Runner",
+    line: "A two level arcade runner in p5.js, made for my first year coursework.",
+    meta: "BROWSER, P5.JS. 2026.",
+    colour: "#3A2F55",
+    link: { label: "GitHub", href: "https://github.com/t2-khatri/Nebula_Runner_Game" },
+  },
+];
+
+export const videos = {
+  // TODO: paste your channel link, e.g. "https://www.youtube.com/@yourname"
+  channel: "",
+  intro:
+    "I make short films and AI video: cinematic scenes, prompt experiments and the odd behind the scenes cut. Everything lives on YouTube.",
+  // Paste up to four video IDs (the bit after watch?v= in the link).
+  // Their thumbnails become the four frames of the film strip.
+  ids: [] as string[],
+  caption: "Four frames from my YouTube channel.",
+};
 
 export const about = {
   paragraphs: [
