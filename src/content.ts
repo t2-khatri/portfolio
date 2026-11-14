@@ -196,9 +196,9 @@ export const videos = {
   // Four frames for the film strip. Each is a YouTube video ID, plus which auto thumbnail to use.
   frames: [
     { id: "q2ovHoHDA6g", thumb: "hqdefault" },
-    { id: "q2ovHoHDA6g", thumb: "2" },
+    { id: "q2ovHoHDA6g", thumb: "hq2" },
     { id: "3STIhqdVBDk", thumb: "hqdefault" },
-    { id: "q2ovHoHDA6g", thumb: "3" },
+    { id: "q2ovHoHDA6g", thumb: "hq3" },
   ],
   caption: "Frames from Real Magicians and my night shoot.",
   films: [
