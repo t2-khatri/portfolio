@@ -6,7 +6,7 @@ import Cover from "./components/Cover";
 import Games from "./components/Games";
 import Videos from "./components/Videos";
 import ThreeD from "./components/ThreeD";
-import { site, hero, focus, projects, about, experience, contact, videos } from "./content";
+import { site, hero, focus, projects, about, contact, videos } from "./content";
 
 function Hero() {
   return (
@@ -140,38 +140,6 @@ function About() {
   );
 }
 
-function Experience() {
-  return (
-    <section id="experience" className="section scroll-mt-24">
-      <div className="wrap">
-        <FadeIn>
-          <p className="label text-accent mb-4">Experience</p>
-          <h2 className="h-display mb-14">Where I <em>work</em></h2>
-        </FadeIn>
-        <div className="border-t rule">
-          <div className="hidden md:grid grid-cols-[120px_1.3fr_1fr_120px] gap-6 py-4 border-b rule label text-muted">
-            <span>When</span><span>Role</span><span>Where</span><span>City</span>
-          </div>
-          {experience.map((e) => (
-            <div key={e.role + e.place} className="border-b rule py-6 md:grid md:grid-cols-[120px_1.3fr_1fr_120px] md:gap-6 md:items-baseline">
-              <span className="label text-muted block md:inline">{e.when}</span>
-              <span className="font-serif text-[22px] block mt-1 md:mt-0">{e.role}</span>
-              <span className="block">{e.place}</span>
-              <span className="block text-muted">{e.city}</span>
-            </div>
-          ))}
-          <div className="border-b rule py-6 md:grid md:grid-cols-[120px_1.3fr_1fr_120px] md:gap-6 md:items-baseline">
-            <span className="label text-muted block md:inline">2024 to 2027</span>
-            <span className="font-serif text-[22px] block mt-1 md:mt-0">BSc Digital Media</span>
-            <span className="block">UWE Bristol</span>
-            <span className="block text-muted">Bristol</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Contact() {
   const [email, setEmail] = useState("");
   const onSubmit = (e: FormEvent) => {
@@ -235,7 +203,6 @@ export default function App() {
         <Games />
         <Work />
         <About />
-        <Experience />
         <Contact />
       </main>
       <Footer />

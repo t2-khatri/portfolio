@@ -224,20 +224,11 @@ export const videos = {
 export const about = {
   paragraphs: [
     "I grew up in Nepal and came to the UK to study. I am now in my final year of a BSc in Digital Media at UWE Bristol, working mostly in 3D, live action production and interactive work.",
-    "Alongside my degree I work in Bristol shops and kitchens. It has taught me to work fast, stay calm with a queue out the door and look after a team, which turns out to be useful on group projects too.",
     "Right now I am animating a short 3D scene, cutting my first showreel, and building a website that shows river levels and rain forecasts across Nepal.",
   ],
   line: "Looking for a junior 3D or media production role in a small studio from summer 2027.",
 };
 
-export const experience = [
-  { when: "Now", role: "Colleague assistant", place: "Tesco Express", city: "Bristol" },
-  { when: "Now", role: "Store assistant", place: "Costcutter", city: "Bristol" },
-  { when: "Now", role: "Team member", place: "Pasta Evangelists", city: "Bristol" },
-  { when: "Before", role: "Store colleague assistant", place: "Pets at Home", city: "Bristol" },
-  { when: "Before", role: "Kitchen assistant", place: "Indian Rasohi", city: "Bristol" },
-  { when: "Before", role: "Warehouse operative", place: "DX Express and DPD", city: "Bristol" },
-];
 
 export const contact = {
   heading: "Have something in mind?",
